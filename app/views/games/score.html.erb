@@ -1,0 +1,9 @@
+<h1>Result</h1>
+<p><%= @result %></p>
+<p>Your word: <strong><%= @word %></strong></p>
+<p>Letters provided: <strong><%= @letters.join(" ") %></strong></p>
+<p>Time taken: <strong><%= @time_taken %> seconds</strong></p>
+<p>Score this round: <strong><%= @score %></strong></p>
+<p>Total score: <strong><%= @total_score %></strong></p>
+
+<%= link_to "Play Again", new_path, class: "btn btn-success mt-3" %>

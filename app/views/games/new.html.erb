@@ -1,0 +1,10 @@
+<h1>New Game</h1>
+<p><strong><%= @letters.join(" ") %></strong></p>
+<p>What is the longest word you can find?</p>
+<%= form_with url: "/score", method: :post, data: { turbo: false } do |form| %>
+  <%= form.text_field :word, placeholder: "Type your word", class: "form-control mb-2" %>
+  <%= form.hidden_field :letters, value: @letters.join %>
+  <%= form.hidden_field :start_time, value: Time.now.to_i %>
+  <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+  <%= form.submit "Play", class: "btn btn-primary" %>
+<% end %>
